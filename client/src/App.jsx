@@ -1,6 +1,10 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react';
+import { Route,Routes,useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+
 
 import './App.css'
+
 
 function App() {
 
@@ -8,7 +12,11 @@ function App() {
   return (
     <>
    <div className="app">
-    <h1>Hello World</h1>
+   <Routes>
+      <Route path="/" element={<Home/>}/>
+      {/* <Route path="/signup" element={<SignUp/>}/>
+      <Route path="/login" element={<Login/>}/> */}
+    </Routes>
    </div>
     </>
   )
