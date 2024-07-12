@@ -5,8 +5,11 @@ import { setIsOpen, setItems } from '../state';
 
 
 const Navbar = () => {
+    //use navigate to move to new page
     const navigation = useNavigate()
+    //use dispatch functions to manipulate state 
    const dispatch = useDispatch()
+   //use selectors to select which piece of state u want to work with
    const cart = useSelector((state)=> state.cart.cart)
   return (
     <>
@@ -22,7 +25,7 @@ const Navbar = () => {
     <button className="btn btn-ghost btn-xl">
       <div className="indicator">
        <span onClick={()=>dispatch(setIsOpen({}))}> Cart </span>
-        <span className="badge badge-xs badge-primary indicator-item">4</span>
+        {cart.length===0?<></>  :<span className="badge badge-xs badge-primary indicator-item">{cart.legnth}</span>}
       </div>
     </button>
   </div>
