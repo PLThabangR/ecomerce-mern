@@ -1,23 +1,39 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from "daisyui"
+import daisyui from "daisyui";
+import daisyUIThemes from "daisyui/src/theming/themes";
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
     extend: {},
   },
   plugins: [ daisyui,],
   daisyui: {
-    themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "dark", // name of one of the included themes for dark mode
-    base: true, // applies background color and foreground color for root element by default
-    styled: true, // include daisyUI colors and design decisions for all components
-    utils: true, // adds responsive and modifier utility classes
-    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: ":root", // The element that receives theme color CSS variables
+    themes: ["light", 
+      {
+        black:{
+          ...daisyUIThemes["black"],
+          primary:"rgb(29,155,240)",
+          secondary:"rgb(24,24,24)"
+
+        }
+      }
+
+    ],
   },
+    
 }
 
