@@ -1,14 +1,16 @@
 
-import { Link } from 'react-router-dom';
-//import {useDispatch,useSelector} from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import {useDispatch,useSelector} from 'react-redux';
+import { setIsOpen, setItems } from '../state';
 
 
 const Navbar = () => {
-    
- //   const dispatch = useDispatch()
+    const navigation = useNavigate()
+   const dispatch = useDispatch()
+   const cart = useSelector((state)=> state.cart.cart)
   return (
     <>
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-300">
   <div className="navbar-start">
   <a className="btn btn-ghost text-xl">Online Store</a>
   </div>
@@ -19,7 +21,7 @@ const Navbar = () => {
     </button>
     <button className="btn btn-ghost btn-xl">
       <div className="indicator">
-        Cart
+       <span onClick={()=>dispatch(setIsOpen({}))}> Cart </span>
         <span className="badge badge-xs badge-primary indicator-item">4</span>
       </div>
     </button>
