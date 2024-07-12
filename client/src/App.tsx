@@ -6,15 +6,13 @@ import './App.css'
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Watch from './pages/Watch';
-import Navbar from './components/Navbar';
+
 
 function App() {
   
 
   return (
-    <div className="container">
-     <Navbar/>
-    
+    <div>
     <Routes>
    
     <Route path='/' element={<Home/>}/>

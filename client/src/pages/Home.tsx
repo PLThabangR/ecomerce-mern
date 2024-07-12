@@ -1,12 +1,18 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+import Sidebar from '../components/Sidebar'
+
 
 const Home = () => {
   return (
     <>
-    <div className='flex-[4_4_0] mr-auto border-r border-gray-700 min-h-screen'>
-        xcgdfgfd
+  
+      <div className="max-h-screen overflow-hidden">
+      <Navbar/>
     </div>
-    
+    <div className="">
+        <Sidebar/>
+    </div>
     
     </>
   )
